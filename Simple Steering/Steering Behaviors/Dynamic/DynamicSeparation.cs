@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents a Separation Steering behavior for agents.
 /// </summary>
@@ -25,6 +22,12 @@ public class DynamicSeparation : AgentBehaviour
         _targets = GameObject.FindGameObjectsWithTag("Target");
     }
 
+    /// <summary>
+    /// Generates a Steering object that represents the agent's desire to naturally avoid cluttering with other target(s), as defined
+    /// in AI for Games by Ian Millington. The Agent will attempt to position itself away from others if they get too close, moving in
+    /// proportion to how close the target(s) are.
+    /// </summary>
+    /// <returns></returns>
     public override Steering GetSteering()
     {
         Steering steering = new Steering();

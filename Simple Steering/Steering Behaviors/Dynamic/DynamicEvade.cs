@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents an Evade Steering behavior for agents.
 /// </summary>
@@ -28,6 +25,11 @@ public class DynamicEvade : DynamicFlee
         Target = new GameObject();
     }
 
+    /// <summary>
+    /// Generate a Steering object based on Dynamic Evade according to AI for Games by Ian Millington. This will attempt to avoid a single
+    /// target if they enter the Agent's perceived personal space.
+    /// </summary>
+    /// <returns></returns>
     public override Steering GetSteering()
     {
         // Calculate the Target to delegate to seek

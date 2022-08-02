@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents an Obstacle Avoidance Steering behavior for agents.
 /// </summary>
@@ -22,7 +19,6 @@ public class DynamicObstacleAvoidance : DynamicArrive
     // The angle that the array of rays will aim at. 
     private float _rayAngle = 90f;
 
-
     public override void Awake()
     {
         base.Awake();
@@ -30,7 +26,11 @@ public class DynamicObstacleAvoidance : DynamicArrive
         base.SlowingRadius = 1000f;
     }
 
-
+    /// <summary>
+    /// Generates a Steering object based on the Dynamic Obstacle Avoidance rules based on AI for Games by Ian Millington.
+    /// This will attempt to avoid obstacles such as walls or environmental hazards, assuming that the hitbox is circular.
+    /// </summary>
+    /// <returns>A Steering object.</returns>
     public override Steering GetSteering()
     {
         for (int i = 0; i < NumberOfRays; i++)
@@ -51,7 +51,6 @@ public class DynamicObstacleAvoidance : DynamicArrive
         return base.GetSteering();
     }
 
-
     /// <summary>
     /// Helper function that returns the direction of raycast.
     /// </summary>
@@ -63,7 +62,6 @@ public class DynamicObstacleAvoidance : DynamicArrive
         Quaternion rotationModifier = Quaternion.AngleAxis((index / (float)NumberOfRays - 1) * _rayAngle * 2 + _rayAngle, transform.up);
         return currentRotation * rotationModifier * Vector3.forward;
     }
-
 
     /// <summary>
     /// Helper Unity method to visualize the raycasts.

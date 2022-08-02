@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents a Pursue Steering behavior for agents.
 /// </summary>
@@ -25,6 +22,12 @@ public class DynamicPursue : DynamicSeek
         Target = new GameObject();
     }
 
+    /// <summary>
+    /// Generate a Steering object that is based on Dynamic Pursue rules as defined in AI for Games by Ian Millington. The behavior
+    /// seeks to be at the same position as the explicit target at some point in the future, so it will opt to go to the potential location
+    /// over the target's current actual location.
+    /// </summary>
+    /// <returns>A Steering object.</returns>
     public override Steering GetSteering()
     {
         // Calculate the Target to delegate to seek

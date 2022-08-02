@@ -2,7 +2,6 @@ using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This is a base class that represents AgentBehavior for Agents using Steering Behaviors.
 /// </summary>
@@ -24,7 +23,7 @@ public class AgentBehaviour : MonoBehaviour
     /// <summary>
     /// Returns the calculated Steering behavior from derived classes.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>A Steering result.</returns>
     public virtual Steering GetSteering()
     {
         return new Steering();

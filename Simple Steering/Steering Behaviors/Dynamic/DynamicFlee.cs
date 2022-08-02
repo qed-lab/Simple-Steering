@@ -1,14 +1,15 @@
-using UnityEngine;
-using System.Collections;
-
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents a Dynamic Flee Steering behavior for agents.
 /// </summary>
 public class DynamicFlee : AgentBehaviour
 {
+    /// <summary>
+    /// Generates a Steering behavior according to the rules of Dynamic Flee as defined by AI for Games by Ian Millington.
+    /// Will attempt to get away from a specific target and stay as far away.
+    /// </summary>
+    /// <returns>A Steering object.</returns>
     public override Steering GetSteering()
     {
         Steering result = new Steering();

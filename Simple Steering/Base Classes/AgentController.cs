@@ -1,15 +1,11 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This is a base class that represents an AgentController for Steering Behaviors. 
 /// </summary>
-/// 
-
 public class AgentController : MonoBehaviour
 {
     // Create list of behaviours to add in inspector; Rename to AgentController 
@@ -18,7 +14,7 @@ public class AgentController : MonoBehaviour
 
     public List<string> Behaviors = new List<string>();
 
-    //public List<AgentBehaviour> agentBehaviours; 
+    //public List<AgentBehaviour> agentBehaviours;
 
     [System.NonSerialized]
     public Vector3 Velocity;
@@ -36,9 +32,6 @@ public class AgentController : MonoBehaviour
     public float Rotation;
 
     protected Steering Steering;
-
-    private float scale = 0f;
-
 
     void Start()
     {
