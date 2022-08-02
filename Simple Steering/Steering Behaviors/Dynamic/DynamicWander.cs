@@ -2,7 +2,6 @@ using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents a Wander Steering behavior for agents.
 /// </summary>
@@ -22,6 +21,11 @@ public class DynamicWander : DynamicFace
         base.Awake();
     }
 
+    /// <summary>
+    /// Generates a Steering behavior that is based on the Dynamic Wander rules in AI for Games by Ian Millington. Dynamic Wander picks a
+    /// random point in a radius around the agent, then navigates towards it using either Seek (by default).
+    /// </summary>
+    /// <returns>A Steering object with relevant movemtn and rotation information.</returns>
     public override Steering GetSteering()
     {
         Steering steering = new Steering();

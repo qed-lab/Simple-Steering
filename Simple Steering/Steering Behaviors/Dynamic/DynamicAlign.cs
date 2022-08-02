@@ -1,9 +1,7 @@
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents an Align Steering behavior for agents.
 /// </summary>
@@ -19,6 +17,11 @@ public class DynamicAlign : AgentBehaviour
     [System.NonSerialized]
     public float TimeToTarget = 0.1f;
 
+    /// <summary>
+    /// Generate a Dynamic Align Steering object based on AI for Games by Ian Millington. This will generate a rotational Steering
+    /// result that aims the Agent in the same direction as the target object within the given target radius.
+    /// </summary>
+    /// <returns>A Steering Result.</returns>
     public override Steering GetSteering()
     {
         Steering steering = new Steering();

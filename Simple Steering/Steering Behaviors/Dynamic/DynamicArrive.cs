@@ -1,9 +1,7 @@
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This class represents an Arrive Steering behavior for agents.
 /// </summary>
@@ -18,6 +16,12 @@ public class DynamicArrive : AgentBehaviour
     // The time over which to achieve Target speed.
     private const float _timeToTarget = 0.1f;
 
+    /// <summary>
+    /// Generates a Steering result based on the details in AI for Games by Ian Millington. This will generate a Steering result similar to
+    /// the DynamicSeek UNTIL it approaches the end, where it will slow down and try to arrive right on the end point (or within a
+    /// given radius).
+    /// </summary>
+    /// <returns>A Steering result.</returns>
     public override Steering GetSteering()
     {
         Steering steering = new Steering();

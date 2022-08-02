@@ -2,7 +2,6 @@ using UnityEngine;
 
 /// <summary>
 /// Author: Diego Andino
-/// OpenFL Project 2021
 /// 
 /// This is a base class that represents AgentBehavior for Agents using Steering Behaviors.
 /// </summary>
@@ -24,7 +23,7 @@ public class AgentBehaviour : MonoBehaviour
     /// <summary>
     /// Returns the calculated Steering behavior from derived classes.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>A Steering result.</returns>
     public virtual Steering GetSteering()
     {
         return new Steering();
@@ -45,10 +44,10 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Maps a rotation to between 180 degrees both positive and negative.
     /// </summary>
     /// <param name="rotation"></param>
-    /// <returns></returns>
+    /// <returns>The clamped rotation.</returns>
     public float MapToRange(float rotation)
     {
         rotation %= 360.0f;
