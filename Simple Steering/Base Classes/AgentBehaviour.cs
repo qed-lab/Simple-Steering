@@ -44,10 +44,10 @@ public class AgentBehaviour : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Maps a rotation to between 180 degrees both positive and negative.
     /// </summary>
     /// <param name="rotation"></param>
-    /// <returns></returns>
+    /// <returns>The clamped rotation.</returns>
     public float MapToRange(float rotation)
     {
         rotation %= 360.0f;
